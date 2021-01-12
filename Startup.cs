@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SaleWebMVC.Data;
 
 namespace SaleWebMVC
 {
@@ -24,6 +26,9 @@ namespace SaleWebMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<SaleWebMVCContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SaleWebMVCContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
