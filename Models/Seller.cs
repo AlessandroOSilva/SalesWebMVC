@@ -25,7 +25,6 @@ namespace SaleWebMVC.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
-        [Required(ErrorMessage = "{0} Required")]
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
 
